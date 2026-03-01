@@ -40,7 +40,7 @@ public class CreateToDoCommandHandler
             
             return result.Id;
         }
-        catch(Exception ex)
+        catch(Exception)
         {
             await _unitOfWork.RollbackAsync();
             throw;

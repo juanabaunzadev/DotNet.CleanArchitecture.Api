@@ -4,7 +4,7 @@ namespace CleanArchitecture.ApiTemplate.Application.Exceptions;
 
 public class BusinessValidationException : Exception
 {
-    public List<string> Errors { get; set; }
+    public List<string> Errors { get; set; } = new List<string>();
 
     public BusinessValidationException(ValidationResult validationResult)
     {
