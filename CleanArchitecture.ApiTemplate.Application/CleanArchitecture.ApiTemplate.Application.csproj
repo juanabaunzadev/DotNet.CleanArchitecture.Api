@@ -10,4 +10,8 @@
     <Folder Include="Features\ToDos\Querys\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitecture.ApiTemplate.Domain\CleanArchitecture.ApiTemplate.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
