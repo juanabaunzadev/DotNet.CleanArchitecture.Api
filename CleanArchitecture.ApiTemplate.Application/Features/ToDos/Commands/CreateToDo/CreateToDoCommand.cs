@@ -1,3 +1,5 @@
-﻿namespace CleanArchitecture.ApiTemplate.Application.Features.ToDos.Commands.CreateToDo;
+﻿using CleanArchitecture.ApiTemplate.Application.Utilities.Messaging;
 
-public record CreateToDoCommand(string Name, string? Description);
+namespace CleanArchitecture.ApiTemplate.Application.Features.ToDos.Commands.CreateToDo;
+
+public record CreateToDoCommand(string Name, string? Description) : IRequest<Guid>;

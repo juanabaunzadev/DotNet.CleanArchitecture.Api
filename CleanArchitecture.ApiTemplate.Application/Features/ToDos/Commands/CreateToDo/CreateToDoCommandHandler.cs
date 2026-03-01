@@ -1,12 +1,13 @@
 ﻿using CleanArchitecture.ApiTemplate.Application.Abstractions.Persistence;
 using CleanArchitecture.ApiTemplate.Application.Abstractions.Repositories;
 using CleanArchitecture.ApiTemplate.Application.Exceptions;
+using CleanArchitecture.ApiTemplate.Application.Utilities.Messaging;
 using CleanArchitecture.ApiTemplate.Domain.Entities;
 using FluentValidation;
 
 namespace CleanArchitecture.ApiTemplate.Application.Features.ToDos.Commands.CreateToDo;
 
-public class CreateToDoCommandHandler
+public class CreateToDoCommandHandler : IRequestHandler<CreateToDoCommand, Guid>
 {
     private readonly IRepositoryToDo _repositoryToDo;
     private readonly IValidator<CreateToDoCommand> _validator;
