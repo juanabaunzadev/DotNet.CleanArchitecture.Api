@@ -10,28 +10,18 @@ namespace CleanArchitecture.ApiTemplate.Application.Features.ToDos.Commands.Crea
 public class CreateToDoCommandHandler : IRequestHandler<CreateToDoCommand, Guid>
 {
     private readonly IRepositoryToDo _repositoryToDo;
-    private readonly IValidator<CreateToDoCommand> _validator;
     private readonly IUnitOfWork _unitOfWork;
 
     public CreateToDoCommandHandler(
         IRepositoryToDo repositoryToDo,
-        IValidator<CreateToDoCommand> validator,
         IUnitOfWork unitOfWork)
     {
         _repositoryToDo = repositoryToDo;
-        _validator = validator;
         _unitOfWork = unitOfWork;
     }
 
-    public async Task<Guid> Handle(CreateToDoCommand command)
+    public async Task<Guid> Handle(CreateToDoCommand command, CancellationToken cancellationToken)
     {
-        var validationResult = await _validator.ValidateAsync(command);
-
-        if (!validationResult.IsValid)
-        {
-            throw new BusinessValidationException(validationResult);
-        }
-
         var todo = new ToDo(command.Name, command.Description);
         
         try
