@@ -5,7 +5,7 @@ namespace CleanArchitecture.ApiTemplate.Application.Features.ToDos.Querys.GetToD
 public class GetToDoByIdResponse
 {
     public Guid Id { get; set; }
-    public string Name { get; set; }
+    public required string Name { get; set; }
     public string? Description { get; set; }
     public ToDoStatus Status { get; set; }
 }

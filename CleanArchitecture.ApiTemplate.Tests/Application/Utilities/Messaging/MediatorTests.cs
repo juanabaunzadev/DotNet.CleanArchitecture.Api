@@ -32,7 +32,7 @@ public class MediatorTests
                            .Returns(handlerMock);
 
         serviceProviderMock.GetService(typeof(IValidator<TestRequest>))
-                           .Returns((object)null);
+                           .Returns((object)null!);
 
         var mediator = new Mediator(serviceProviderMock);
 

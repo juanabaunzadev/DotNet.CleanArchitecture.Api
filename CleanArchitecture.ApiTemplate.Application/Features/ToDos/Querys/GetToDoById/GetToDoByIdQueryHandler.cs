@@ -22,14 +22,6 @@ public class GetToDoByIdQueryHandler : IRequestHandler<GetToDoByIdQuery, GetToDo
             throw new NotFoundException();
         }
 
-        var response = new GetToDoByIdResponse
-        {
-            Id = toDo.Id,
-            Name = toDo.Name,
-            Description = toDo.Description,
-            Status = toDo.Status
-        };
-        
-        return response;
+        return GetToDoByIdMapper.MapToResponse(toDo);
     }
 }
