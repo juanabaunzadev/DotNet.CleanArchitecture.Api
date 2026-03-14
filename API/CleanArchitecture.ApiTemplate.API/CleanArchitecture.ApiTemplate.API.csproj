@@ -17,4 +17,11 @@
     <ProjectReference Include="../../Infrastructure/CleanArchitecture.ApiTemplate.Persistence/CleanArchitecture.ApiTemplate.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers/" />
+    <Folder Include="DTOs/" />
+    <Folder Include="DTOs/ToDos/" />
+    <Folder Include="Middlewares/" />
+  </ItemGroup>
+
 </Project>

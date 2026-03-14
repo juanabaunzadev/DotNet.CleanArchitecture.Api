@@ -1,0 +1,14 @@
+@host = http://localhost:5244/api/todos
+
+GET {{host}}/019cead3-1b3b-76d6-98d4-a7499b1d0905
+Accept: application/json
+
+###
+
+POST {{host}}
+Content-Type: application/json
+
+{
+    "name": "Todo Test",
+    "description": "Todo Test Description"
+}
